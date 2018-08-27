@@ -15,7 +15,7 @@ class Show < ActiveRecord::Base
 
   def self.least_popular_show
     rating = Show.lowest_rating
-    Show.where("rating = #{rating}")
+    Show.find_by(rating: rating)
   end
 
   def self.ratings_sum
